@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<robot name="cuboid_quadcopter_280g">
+<gazebo kv="3750" props_diameter="0.0765" voltage="14.8" />
+  <link name="body_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.216"/>
+      <inertia ixx="0.000808" ixy="0" ixz="0" iyy="0.00297" iyz="0" izz="0.0036"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.4 0.2 0.07"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.4 0.2 0.07"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rotor_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016"/>
+      <inertia ixx="0.0000139" ixy="0" ixz="0" iyy="0.0000139" iyz="0" izz="0.0000267"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.1 0.1 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rotor_2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016"/>
+      <inertia ixx="0.0000139" ixy="0" ixz="0" iyy="0.0000139" iyz="0" izz="0.0000267"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rotor_3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016"/>
+      <inertia ixx="0.0000139" ixy="0" ixz="0" iyy="0.0000139" iyz="0" izz="0.0000267"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rotor_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.016"/>
+      <inertia ixx="0.0000139" ixy="0" ixz="0" iyy="0.0000139" iyz="0" izz="0.0000267"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_rotor_1" type="fixed">
+    <parent link="body_link"/>
+    <child link="rotor_1"/>
+    <origin xyz="0.25 0.25 -0.025" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint_rotor_2" type="fixed">
+    <parent link="body_link"/>
+    <child link="rotor_2"/>
+    <origin xyz="-0.25 0.25 -0.025" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint_rotor_3" type="fixed">
+    <parent link="body_link"/>
+    <child link="rotor_3"/>
+    <origin xyz="0.25 -0.25 -0.025" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint_rotor_4" type="fixed">
+    <parent link="body_link"/>
+    <child link="rotor_4"/>
+    <origin xyz="-0.25 -0.25 -0.025" rpy="0 0 0"/>
+  </joint>
+
+</robot>
